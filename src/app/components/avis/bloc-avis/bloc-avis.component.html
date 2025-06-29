@@ -1,0 +1,45 @@
+<mat-card class="bloc-card">
+  <mat-expansion-panel
+    [expanded]="deplie()"
+    (opened)="onToggleDeplie()"
+    (closed)="onToggleDeplie()"
+    class="expansion-panel"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon class="statut-icon" [color]="statutColor()">
+          {{ statutIcon() }}
+        </mat-icon>
+        {{ titre() }}
+        <mat-chip class="count-chip" color="primary" selected>
+          {{ nombreAvis() }}
+        </mat-chip>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <!-- Filtre de recherche -->
+    <app-filtre-recherche
+      [placeholder]="placeholder()"
+      [nombreResultats]="nombreResultats()"
+      (rechercheChange)="onRechercheChange($event)"
+    ></app-filtre-recherche>
+
+    <!-- Liste des avis -->
+    <div class="avis-liste">
+      @for (avis of avisFiltres(); track avis.id) {
+        <app-avis-item [avis]="avis"></app-avis-item>
+      }
+
+      @if (avisFiltres().length === 0) {
+        <mat-card class="aucun-resultat-card">
+          <mat-card-content>
+            <div class="aucun-resultat-content">
+              <mat-icon class="aucun-resultat-icon">search_off</mat-icon>
+              <p>{{ messageAucunResultat() }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </mat-expansion-panel>
+</mat-card>

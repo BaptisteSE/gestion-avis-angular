@@ -1,0 +1,17 @@
+<div class="filtre-section">
+  <mat-form-field appearance="outline" class="filtre-input">
+    <mat-label>{{ placeholder() }}</mat-label>
+    <input
+      matInput
+      [ngModel]="termeRecherche()"
+      (ngModelChange)="termeRecherche.set($event); onRechercheChange()"
+      placeholder="{{ placeholder() }}"
+    >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-chip class="resultats-chip" color="primary" selected>
+    <mat-icon class="chip-icon">filter_list</mat-icon>
+    {{ nombreResultats() }} résultat(s)
+  </mat-chip>
+</div>

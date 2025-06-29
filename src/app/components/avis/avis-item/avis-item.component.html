@@ -1,0 +1,44 @@
+<mat-card class="avis-card" [class]="avis().statut">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon class="avis-icon">{{ avis().icone || 'rate_review' }}</mat-icon>
+      {{ avis().titre }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <mat-icon class="date-icon">schedule</mat-icon>
+      {{ dateFormatee() }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="avis-description">{{ avis().description }}</p>
+
+    <div class="avis-rating">
+      <span class="rating-label">Note :</span>
+      <div class="stars">
+        @for (etoile of etoiles(); track $index) {
+          <mat-icon class="star-icon" [class.filled]="etoile === '★'">
+            {{ etoile === '★' ? 'star' : 'star_border' }}
+          </mat-icon>
+        }
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-actions>
+    <div class="avis-footer">
+      <div class="auteur-info">
+        <mat-icon class="person-icon">person</mat-icon>
+        <span class="auteur">{{ avis().auteur }}</span>
+      </div>
+      <mat-chip [color]="statutColor()" selected>
+        <mat-icon class="chip-icon">
+          {{ avis().statut === 'ouvert' ? 'pending' : 'check_circle' }}
+        </mat-icon>
+        {{ statutTexte() }}
+      </mat-chip>
+    </div>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,109 @@
+/* Styles globaux pour l'application - Design moderne et élégant */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2d3748;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Animation de chargement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+app-avis {
+  display: block;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Styles Material Design personnalisés - Plus élégants */
+.mat-mdc-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.mat-mdc-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mat-mdc-chip {
+  border-radius: 20px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-flex {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  background: transparent !important;
+}
+
+.mat-mdc-toolbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mat-mdc-expansion-panel {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.mat-mdc-expansion-panel-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 16px 16px 0 0 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.mat-mdc-expansion-panel-header:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+}
+
+.mat-mdc-expansion-panel-body {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 0 0 16px 16px !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Material Design */
+@media (max-width: 768px) {
+  .mat-mdc-card {
+    margin: 8px;
+    border-radius: 12px !important;
+  }
+
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+}

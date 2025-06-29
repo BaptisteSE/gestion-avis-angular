@@ -1,0 +1,32 @@
+<div class="avis-container">
+  <mat-toolbar color="primary" class="avis-toolbar">
+    <mat-icon>rate_review</mat-icon>
+    <span>Gestion des Avis</span>
+  </mat-toolbar>
+
+  <div class="avis-content">
+    <!-- Bloc des avis ouverts -->
+    <app-bloc-avis
+      titre="Avis Ouverts"
+      statut="ouvert"
+      [avis]="avisOuverts()"
+      [avisFiltres]="avisOuvertsFiltres()"
+      [deplie]="blocOuvertsDeplie()"
+      placeholder="Rechercher dans les avis ouverts..."
+      (toggleDeplie)="onToggleBlocOuverts()"
+      (rechercheChange)="onRechercheOuverts($event)"
+    ></app-bloc-avis>
+
+    <!-- Bloc des avis fermés -->
+    <app-bloc-avis
+      titre="Avis Fermés"
+      statut="ferme"
+      [avis]="avisFermes()"
+      [avisFiltres]="avisFermesFiltres()"
+      [deplie]="blocFermesDeplie()"
+      placeholder="Rechercher dans les avis fermés..."
+      (toggleDeplie)="onToggleBlocFermes()"
+      (rechercheChange)="onRechercheFermes($event)"
+    ></app-bloc-avis>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+.filtre-section {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.filtre-input {
+  flex: 1;
+  min-width: 280px;
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-flex {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(102, 126, 234, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-flex:hover {
+  border-color: rgba(102, 126, 234, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-flex:focus-within {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filtre-input ::ng-deep .mat-mdc-text-field-wrapper {
+  background: transparent !important;
+  padding: 0 16px;
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-infix {
+  padding: 16px 0 !important;
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-label {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+}
+
+.filtre-input ::ng-deep .mat-mdc-input-element {
+  color: #374151 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.filtre-input ::ng-deep .mat-mdc-form-field-icon-suffix {
+  color: #667eea !important;
+}
+
+.resultats-chip {
+  white-space: nowrap;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+.resultats-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.chip-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: white !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .filtre-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .filtre-input {
+    min-width: auto;
+  }
+
+  .resultats-chip {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtre-section {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .filtre-input ::ng-deep .mat-mdc-form-field-infix {
+    padding: 12px 0 !important;
+  }
+
+  .filtre-input ::ng-deep .mat-mdc-input-element {
+    font-size: 14px !important;
+  }
+}
